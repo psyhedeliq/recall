@@ -1,10 +1,14 @@
 import React from 'react';
 import { render } from 'react-dom';
+import { Recall } from './component/app';
 
-const recall = document.querySelector('#recall');
-
-const Recall = () => {
-  return <div>Recall App</div>;
+const renderToDom = () => {
+  const recall = document.querySelector('#recall');
+  if (recall !== null) {
+    render(<Recall />, recall);
+  }
 };
 
-render(<Recall />, recall);
+renderToDom();
+
+export { renderToDom };
